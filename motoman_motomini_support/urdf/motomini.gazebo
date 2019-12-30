@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/motoman_motomini</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <!-- Base_link -->
+  <gazebo reference="base_link">
+    <gravity>1</gravity>
+    <mu1>2</mu1>
+    <mu2>2</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- Link1 -->
+  <gazebo reference="link_1_s">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Link2 -->
+  <gazebo reference="link_2_l">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Link3 -->
+  <gazebo reference="link_3_u">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Link4 -->
+  <gazebo reference="link_4_r">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Link5 -->
+  <gazebo reference="link_5_b">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Link6 -->
+  <gazebo reference="link_6_t">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <!-- logo -->
+  <gazebo reference="logo_f">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="logo_b">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+</robot>

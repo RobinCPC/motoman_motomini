@@ -1,0 +1,11 @@
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find motoman_motomini_support)/world/motomini.world"/>
+      <!-- more default parameters can be changed here -->
+  </include>
+
+  <!-- Convert an xacro and put on parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find motoman_motomini_support)/urdf/motomini.xacro" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -z 0 -model motoman_motomini" />
+</launch>
