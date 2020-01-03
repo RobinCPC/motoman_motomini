@@ -1,0 +1,64 @@
+motoman_motomini:
+    # Publish all joint states -----------------------------------
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 50
+
+    # Arm Position controller -----------------------------------
+    arm_controller:
+        type: "position_controllers/JointTrajectoryController"
+        joints:
+            - joint_1_s
+            - joint_2_l
+            - joint_3_u
+            - joint_4_r
+            - joint_5_b
+            - joint_6_t
+        gains:
+            joint_1_s: {p: 100.0, i: 0.01, d: 10.0}
+            joint_2_l: {p: 100.0, i: 0.01, d: 10.0}
+            joint_3_u: {p: 100.0, i: 0.01, d: 10.0}
+            joint_4_r: {p: 100.0, i: 0.01, d: 10.0}
+            joint_5_b: {p: 100.0, i: 0.01, d: 10.0}
+            joint_6_t: {p: 100.0, i: 0.01, d: 10.0}
+        constraints:
+            goal_time: 4.0                   # Override default
+            stopped_velocity_tolerance: 0.5  # Override default
+            joint_1_s:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_2_l:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_3_u:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_4_r:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_5_b:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_6_t:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+
+    # Group Position Controllers --------------------------------------------
+    # Allow to send single ROS msg of Float64MutiArray to all joints
+    joint_position_controller:
+        type: position_controllers/JointGroupPositionController
+        joints:
+            - joint_1_s
+            - joint_2_l
+            - joint_3_u
+            - joint_4_r
+            - joint_5_b
+            - joint_6_t
+        gains:
+            joint_1_s: {p: 100.0, i: 0.01, d: 10.0}
+            joint_2_l: {p: 100.0, i: 0.01, d: 10.0}
+            joint_3_u: {p: 100.0, i: 0.01, d: 10.0}
+            joint_4_r: {p: 100.0, i: 0.01, d: 10.0}
+            joint_5_b: {p: 100.0, i: 0.01, d: 10.0}
+            joint_6_t: {p: 100.0, i: 0.01, d: 10.0}
+

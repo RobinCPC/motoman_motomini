@@ -1,0 +1,32 @@
+<launch>
+  <!-- launch gazebo world first -->
+  <include file="$(find motoman_motomini_support)/launch/motomini_world.launch">
+  </include>
+
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find motoman_motomini_control)/config/motomini_config.yaml" command="load"/>
+
+    <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/motoman_motomini" args="joint_state_controller
+                                        joint_position_controller
+                                       "/>
+  <!--
+                                      arm_controller
+    <node name="simple_mover" pkg="motoman_motomini_control" type="simple_mover"/>
+  -->
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+      respawn="false" output="screen">
+    <remap from="/joint_states" to="/motoman_motomini/joint_states" />
+  </node>
+
+  <!-- experiment to control as group -->
+  <node name="simple_mover" pkg="minibot_control" type="simple_mover" output="screen" >
+    <remap from="/minibot/joint_position_controller/command" to="/motoman_motomini/joint_position_controller/command" />
+  </node>
+
+</launch>
+
