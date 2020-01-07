@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>motoman_motomini_control</name>
-  <version>0.0.0</version>
+  <version>0.1.0</version>
   <description>The motoman_motomini_control package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
@@ -67,6 +67,7 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <depend>joint_trajectory_controller</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -10,6 +10,7 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   controller_manager
   joint_state_controller
+  joint_trajectory_controller
   robot_state_publisher
   roscpp
   sensor_msgs
@@ -179,7 +180,7 @@ target_link_libraries(motomini_movegroup_control
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 install(TARGETS motomini_movegroup_control
-  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Mark libraries for installation
