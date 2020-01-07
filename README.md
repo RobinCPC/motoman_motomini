@@ -23,5 +23,5 @@ roslaunch mqtt_monitor mqtt_yk_monitor.launch is_sim:=true
 
 
 Note: motoman_motomini_support is cloned from ROS-Industrial [link](https://github.com/ros-industrial/motoman/tree/kinetic-devel/motoman_motomini_support), and I add Yaskawa logo on its forth joint (for demo purpose).
+In addition, currently, this package only for simulation (I remove dependecy of `motoman_driver`).
 
- 
