@@ -38,7 +38,6 @@
     <include file="$(find motoman_motomini_support)/launch/test_motomini.launch"/>
   </group>
 
-  <!-- Only for simulation, not test with motoman_driver
   <group ns="robot_interface_streaming_motomini">
     <group ns="yrc1000" >
       <include file="$(find motoman_motomini_support)/launch/robot_interface_streaming_motomini.launch">
@@ -56,6 +55,5 @@
       </include>
     </group>
   </group>
-  -->
 
 </launch>
