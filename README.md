@@ -1,5 +1,7 @@
 # motoman_motomini
+[![Build Status](https://travis-ci.org/RobinCPC/motoman_motomini.svg?branch=master)](https://travis-ci.org/RobinCPC/motoman_motomini)
 [![license - bsd 3 clause](https://img.shields.io/:license-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 
 Packages for simulating Motoman Motomini in Gazebo and RViz
 
