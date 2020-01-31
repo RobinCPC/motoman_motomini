@@ -5,7 +5,10 @@
 
 Packages for simulating Motoman Motomini in Gazebo and RViz
 
-![Simulation with MoveIt!](./simulate_moveit.png)
+<a href="https://youtu.be/_nK1TvVzADs">
+  <img src="./simulate_moveit.png" alt="Simulation with MoveIt!" width="100%" height="auto">
+</a>  
+Click the above picture to view demo in YouTube. 
 
 ## To simulate in Gazebo with MoveIt!
 ``` bash
